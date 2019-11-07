@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Exam.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,6 +20,7 @@ namespace Exam.Controllers
         }
         public JsonResult ForgotPassword(string mobile)
         {
+            SMSHandler.SendMessage(mobile,Guid.NewGuid().ToString().Substring(0, 4));
             return Json(null);
         }
         public JsonResult ConfirmNewPassword(string mobile,string code ,string newPassword){
