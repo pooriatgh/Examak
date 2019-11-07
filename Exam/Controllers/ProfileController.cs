@@ -7,10 +7,11 @@ using System.Web.Mvc;
 
 namespace Exam.Controllers
 {
+    [AuthorizationEN]
     public class ProfileController : Controller
     {
         // GET: Profile
-        [AuthorizationEN]
+       
         public ActionResult Index()
         {
             return View();

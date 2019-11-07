@@ -123,6 +123,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AccuntController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\SpeakingController.cs" />
+    <Compile Include="Controllers\WritingController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -166,9 +168,11 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\Writing\WritingPanel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Speaking\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
