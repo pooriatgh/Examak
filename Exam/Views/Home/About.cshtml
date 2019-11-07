@@ -4,4 +4,17 @@
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<input type="text" id="mobile" name="name" value="" />
+<input type="password" id="password" name="name" value="" />
+<input type="password" id="confirmPassword" name="name" value="" />
+<input type="text" id="code" name="name" value="" />
+
+<a onclick="Login()" class="btn btn-default">test login</a>
+<a onclick="Signup()" class="btn btn-default">test signup</a>
+<a onclick="CompleteSignup()" class="btn btn-default">complete signup</a>
+<a onclick="ForgotPassword()" class="btn btn-default">Forgot Password</a>
+<a onclick="ConfirmNewPassword()" class="btn btn-default">Confirm new Password</a>
+
+@section scripts{
+    <script src="~/Scripts/Costume/Accunt.js"></script>
+}
