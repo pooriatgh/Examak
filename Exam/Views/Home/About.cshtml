@@ -4,17 +4,25 @@
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<input type="text" id="mobile" name="name" value="" />
-<input type="password" id="password" name="name" value="" />
-<input type="password" id="confirmPassword" name="name" value="" />
-<input type="text" id="code" name="name" value="" />
+<input type="text" id="mobile" placeholder="mobile" name="name" value="" />
+<input type="password" id="password" name="name" placeholder="pass" value="" />
+<input type="password" id="confirmPassword" name="name" placeholder="pass" value="" />
+<input type="text" id="code" name="name" placeholder="code" value="" />
 
 <a onclick="Login()" class="btn btn-default">test login</a>
 <a onclick="Signup()" class="btn btn-default">test signup</a>
 <a onclick="CompleteSignup()" class="btn btn-default">complete signup</a>
 <a onclick="ForgotPassword()" class="btn btn-default">Forgot Password</a>
 <a onclick="ConfirmNewPassword()" class="btn btn-default">Confirm new Password</a>
+<hr />
+<a onclick="GetProperExam()" class="btn btn-default">Test writing GetProperExam</a>
+<br />
+<input type="hidden" id="writingId" name="name"  value="0f8fad5b-d9cb-469f-a165-70867728950e" />
+<input type="text" id="answer" name="name" placeholder="answer" style="width:200px;height:200px" value="" />
+<a onclick="SubmitAnswer()" class="btn btn-default">Test writing SubmitAnswer</a>
+<a onclick="GetCorrection()" class="btn btn-default">Test writing GetCorrection</a>
 
 @section scripts{
     <script src="~/Scripts/Costume/Accunt.js"></script>
+    <script src="~/Scripts/Costume/Writing.js"></script>
 }

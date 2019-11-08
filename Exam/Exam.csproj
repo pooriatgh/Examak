@@ -128,10 +128,12 @@
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SpeakingController.cs" />
     <Compile Include="Controllers\WritingController.cs" />
+    <Compile Include="Data\Tbl_User.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AuthorizationEN.cs" />
+    <Compile Include="Models\HashHandler.cs" />
     <Compile Include="Models\SMSHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -148,6 +150,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Costume\Accunt.js" />
+    <Content Include="Scripts\Costume\Writing.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />

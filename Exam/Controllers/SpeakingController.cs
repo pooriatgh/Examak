@@ -19,7 +19,7 @@ namespace Exam.Controllers
             return Json(null);
         }
 
-        public JsonResult SubmitAnswer(Guid speakingId, string answer)
+        public JsonResult SubmitAnswer(Guid speakingId, HttpPostedFileBase speakingFile)
         {
             return Json(null);
         }
