@@ -44,4 +44,42 @@ function GetCorrection() {
         });
 }
 
+function GetAvailable() {
 
+    $.post("/speaking/GetAvailable",
+        null, function (result) {
+            alert(result)
+            if (result == "nok") {
+                window.location.replace("/home/about");
+            }
+            else {
+            }
+        });
+}
+
+function GetInProgress() {
+
+    $.post("/speaking/GetInProgress",
+        null, function (result) {
+            alert(result)
+            if (result == "nok") {
+                window.location.replace("/home/about");
+            }
+            else {
+            }
+        });
+}
+
+
+function GetInProgress() {
+
+    $.post("/speaking/GetDone",
+        null, function (result) {
+            alert(result)
+            if (result == "nok") {
+                window.location.replace("/home/about");
+            }
+            else {
+            }
+        });
+}

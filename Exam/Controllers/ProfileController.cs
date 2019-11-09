@@ -16,5 +16,22 @@ namespace Exam.Controllers
         {
             return View();
         }
+        public JsonResult GetTransactionList()
+        {
+            return Json(null);
+        }
+        public JsonResult GetTicketList()
+        {
+            return Json(null);
+        }
+        public JsonResult SendTicket(Guid? replyTicketId)
+        {
+            return Json(null);
+        }
+        public JsonResult ShowTicketThread(Guid? ticketRootId)
+        {
+            return Json(null);
+        }
+
     }
 }

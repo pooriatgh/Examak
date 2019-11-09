@@ -44,4 +44,43 @@ function GetCorrection() {
         });
 }
 
+function GetAvailable() {
+
+    $.post("/writing/GetAvailable",
+        null, function (result) {
+            alert(result)
+            if (result == "nok") {
+                window.location.replace("/home/about");
+            }
+            else {
+            }
+        });
+}
+
+function GetInProgress() {
+
+    $.post("/writing/GetInProgress",
+        null, function (result) {
+            alert(result)
+            if (result == "nok") {
+                window.location.replace("/home/about");
+            }
+            else {
+            }
+        });
+}
+
+
+function GetInProgress() {
+
+    $.post("/writing/GetDone",
+        null, function (result) {
+            alert(result)
+            if (result == "nok") {
+                window.location.replace("/home/about");
+            }
+            else {
+            }
+        });
+}
 

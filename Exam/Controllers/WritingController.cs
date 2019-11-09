@@ -28,5 +28,17 @@ namespace Exam.Controllers
         {
             return Json(null);
         }
+        public JsonResult GetAvailable()
+        {
+            return Json(null);
+        }
+        public JsonResult GetInProgress()
+        {
+            return Json(null);
+        }
+        public JsonResult GetDone()
+        {
+            return Json(null);
+        }
     }
 }
