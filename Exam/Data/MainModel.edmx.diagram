@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b689d41ba4964ea280eb50f0a5746657" Name="Diagram1">
+        <EntityTypeShape EntityType="ENDModel.Tbl_Answer" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ENDModel.Tbl_Payment" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ENDModel.Tbl_Question" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ENDModel.Tbl_Ticket" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ENDModel.Tbl_User" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="ENDModel.FK_Tbl_Answer_Tbl_Question" ManuallyRouted="false" />
+        <AssociationConnector Association="ENDModel.FK_Tbl_Answer_Tbl_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ENDModel.FK_Tbl_Payment_Tbl_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ENDModel.FK_Tbl_Ticket_Tbl_Ticket" ManuallyRouted="false" />
+        <AssociationConnector Association="ENDModel.FK_Tbl_Ticket_Tbl_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

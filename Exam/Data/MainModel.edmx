@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ENDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Tbl_Answer">
+          <Key>
+            <PropertyRef Name="PK_AnswerId" />
+          </Key>
+          <Property Name="PK_AnswerId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserAnswerText" Type="ntext" />
+          <Property Name="UserAnswerFileUrl" Type="nvarchar" MaxLength="500" />
+          <Property Name="FK_UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TeacherAnswerText" Type="ntext" />
+          <Property Name="TeacherAnswerFile" Type="nvarchar" MaxLength="500" />
+          <Property Name="AnswerDatetime" Type="datetime" Nullable="false" />
+          <Property Name="TeacherReplayDatetime" Type="datetime" />
+          <Property Name="FK_QuestionId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Payment">
+          <Key>
+            <PropertyRef Name="PK_PaymentId" />
+          </Key>
+          <Property Name="PK_PaymentId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FK_UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreateDatetime" Type="datetime" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="IsVerified" Type="bit" Nullable="false" />
+          <Property Name="TransactionId" Type="nvarchar" MaxLength="50" />
+          <Property Name="CallbackMeetDatetime" Type="nchar" MaxLength="10" />
+          <Property Name="SendError" Type="nvarchar" MaxLength="250" />
+          <Property Name="RecieveError" Type="nvarchar" MaxLength="250" />
+          <Property Name="HashTransaction" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Tbl_Question">
+          <Key>
+            <PropertyRef Name="PK_QuestionId" />
+          </Key>
+          <Property Name="PK_QuestionId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="QuestionType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="QuestionCategory" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="QuestionLevel" Type="int" Nullable="false" />
+          <Property Name="QuestionTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="QuestionText" Type="ntext" Nullable="false" />
+          <Property Name="QuestionIsActive" Type="bit" Nullable="false" />
+          <Property Name="CreateDatetime" Type="datetime" Nullable="false" />
+          <Property Name="QuestionImageUrl1" Type="nvarchar" MaxLength="250" />
+          <Property Name="QuestionImageUrl2" Type="nvarchar" MaxLength="250" />
+          <Property Name="QuestionFileUrl" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Tbl_Ticket">
+          <Key>
+            <PropertyRef Name="PK_TicketId" />
+          </Key>
+          <Property Name="PK_TicketId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FK_TicketParent" Type="uniqueidentifier" />
+          <Property Name="TicketText" Type="nvarchar" MaxLength="3000" Nullable="false" />
+          <Property Name="TicketSubject" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="IsAnswer" Type="bit" Nullable="false" />
+          <Property Name="CreateDateTime" Type="datetime" Nullable="false" />
+          <Property Name="FK_UserId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Tbl_User">
+          <Key>
+            <PropertyRef Name="PK_UserId" />
+          </Key>
+          <Property Name="PK_UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="SignupCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SignupCodeExpireTime" Type="datetime" Nullable="false" />
+          <Property Name="ResetPassCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ResetCodeExpireTime" Type="datetime" />
+          <Property Name="CreateDatetime" Type="datetime" Nullable="false" />
+          <Property Name="WritingAvailable" Type="int" Nullable="false" />
+          <Property Name="SpeakingAvailable" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Tbl_Answer_Tbl_Question">
+          <End Role="Tbl_Question" Type="Self.Tbl_Question" Multiplicity="1" />
+          <End Role="Tbl_Answer" Type="Self.Tbl_Answer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Question">
+              <PropertyRef Name="PK_QuestionId" />
+            </Principal>
+            <Dependent Role="Tbl_Answer">
+              <PropertyRef Name="FK_QuestionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Answer_Tbl_User">
+          <End Role="Tbl_User" Type="Self.Tbl_User" Multiplicity="1" />
+          <End Role="Tbl_Answer" Type="Self.Tbl_Answer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_User">
+              <PropertyRef Name="PK_UserId" />
+            </Principal>
+            <Dependent Role="Tbl_Answer">
+              <PropertyRef Name="FK_UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Payment_Tbl_User">
+          <End Role="Tbl_User" Type="Self.Tbl_User" Multiplicity="1" />
+          <End Role="Tbl_Payment" Type="Self.Tbl_Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_User">
+              <PropertyRef Name="PK_UserId" />
+            </Principal>
+            <Dependent Role="Tbl_Payment">
+              <PropertyRef Name="FK_UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Ticket_Tbl_Ticket">
+          <End Role="Tbl_Ticket" Type="Self.Tbl_Ticket" Multiplicity="0..1" />
+          <End Role="Tbl_Ticket1" Type="Self.Tbl_Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Ticket">
+              <PropertyRef Name="PK_TicketId" />
+            </Principal>
+            <Dependent Role="Tbl_Ticket1">
+              <PropertyRef Name="FK_TicketParent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Ticket_Tbl_User">
+          <End Role="Tbl_User" Type="Self.Tbl_User" Multiplicity="0..1" />
+          <End Role="Tbl_Ticket" Type="Self.Tbl_Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_User">
+              <PropertyRef Name="PK_UserId" />
+            </Principal>
+            <Dependent Role="Tbl_Ticket">
+              <PropertyRef Name="FK_UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ENDModelStoreContainer">
+          <EntitySet Name="Tbl_Answer" EntityType="Self.Tbl_Answer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Payment" EntityType="Self.Tbl_Payment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Question" EntityType="Self.Tbl_Question" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Ticket" EntityType="Self.Tbl_Ticket" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_User" EntityType="Self.Tbl_User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Tbl_Answer_Tbl_Question" Association="Self.FK_Tbl_Answer_Tbl_Question">
+            <End Role="Tbl_Question" EntitySet="Tbl_Question" />
+            <End Role="Tbl_Answer" EntitySet="Tbl_Answer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Answer_Tbl_User" Association="Self.FK_Tbl_Answer_Tbl_User">
+            <End Role="Tbl_User" EntitySet="Tbl_User" />
+            <End Role="Tbl_Answer" EntitySet="Tbl_Answer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Payment_Tbl_User" Association="Self.FK_Tbl_Payment_Tbl_User">
+            <End Role="Tbl_User" EntitySet="Tbl_User" />
+            <End Role="Tbl_Payment" EntitySet="Tbl_Payment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Ticket_Tbl_Ticket" Association="Self.FK_Tbl_Ticket_Tbl_Ticket">
+            <End Role="Tbl_Ticket" EntitySet="Tbl_Ticket" />
+            <End Role="Tbl_Ticket1" EntitySet="Tbl_Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Ticket_Tbl_User" Association="Self.FK_Tbl_Ticket_Tbl_User">
+            <End Role="Tbl_User" EntitySet="Tbl_User" />
+            <End Role="Tbl_Ticket" EntitySet="Tbl_Ticket" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ENDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tbl_Answer">
+          <Key>
+            <PropertyRef Name="PK_AnswerId" />
+          </Key>
+          <Property Name="PK_AnswerId" Type="Guid" Nullable="false" />
+          <Property Name="UserAnswerText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserAnswerFileUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FK_UserId" Type="Guid" Nullable="false" />
+          <Property Name="TeacherAnswerText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TeacherAnswerFile" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AnswerDatetime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TeacherReplayDatetime" Type="DateTime" Precision="3" />
+          <Property Name="FK_QuestionId" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Tbl_Question" Relationship="Self.FK_Tbl_Answer_Tbl_Question" FromRole="Tbl_Answer" ToRole="Tbl_Question" />
+          <NavigationProperty Name="Tbl_User" Relationship="Self.FK_Tbl_Answer_Tbl_User" FromRole="Tbl_Answer" ToRole="Tbl_User" />
+        </EntityType>
+        <EntityType Name="Tbl_Payment">
+          <Key>
+            <PropertyRef Name="PK_PaymentId" />
+          </Key>
+          <Property Name="PK_PaymentId" Type="Guid" Nullable="false" />
+          <Property Name="FK_UserId" Type="Guid" Nullable="false" />
+          <Property Name="CreateDatetime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="IsVerified" Type="Boolean" Nullable="false" />
+          <Property Name="TransactionId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CallbackMeetDatetime" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="SendError" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="RecieveError" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="HashTransaction" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tbl_User" Relationship="Self.FK_Tbl_Payment_Tbl_User" FromRole="Tbl_Payment" ToRole="Tbl_User" />
+        </EntityType>
+        <EntityType Name="Tbl_Question">
+          <Key>
+            <PropertyRef Name="PK_QuestionId" />
+          </Key>
+          <Property Name="PK_QuestionId" Type="Guid" Nullable="false" />
+          <Property Name="QuestionType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="QuestionCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="QuestionLevel" Type="Int32" Nullable="false" />
+          <Property Name="QuestionTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="QuestionText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="QuestionIsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreateDatetime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="QuestionImageUrl1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="QuestionImageUrl2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="QuestionFileUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tbl_Answer" Relationship="Self.FK_Tbl_Answer_Tbl_Question" FromRole="Tbl_Question" ToRole="Tbl_Answer" />
+        </EntityType>
+        <EntityType Name="Tbl_Ticket">
+          <Key>
+            <PropertyRef Name="PK_TicketId" />
+          </Key>
+          <Property Name="PK_TicketId" Type="Guid" Nullable="false" />
+          <Property Name="FK_TicketParent" Type="Guid" />
+          <Property Name="TicketText" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TicketSubject" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsAnswer" Type="Boolean" Nullable="false" />
+          <Property Name="CreateDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FK_UserId" Type="Guid" />
+          <NavigationProperty Name="Tbl_Ticket1" Relationship="Self.FK_Tbl_Ticket_Tbl_Ticket" FromRole="Tbl_Ticket" ToRole="Tbl_Ticket1" />
+          <NavigationProperty Name="Tbl_Ticket2" Relationship="Self.FK_Tbl_Ticket_Tbl_Ticket" FromRole="Tbl_Ticket1" ToRole="Tbl_Ticket" />
+          <NavigationProperty Name="Tbl_User" Relationship="Self.FK_Tbl_Ticket_Tbl_User" FromRole="Tbl_Ticket" ToRole="Tbl_User" />
+        </EntityType>
+        <EntityType Name="Tbl_User">
+          <Key>
+            <PropertyRef Name="PK_UserId" />
+          </Key>
+          <Property Name="PK_UserId" Type="Guid" Nullable="false" />
+          <Property Name="Mobile" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SignupCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SignupCodeExpireTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ResetPassCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ResetCodeExpireTime" Type="DateTime" />
+          <Property Name="CreateDatetime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="WritingAvailable" Type="Int32" Nullable="false" />
+          <Property Name="SpeakingAvailable" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Tbl_Answer" Relationship="Self.FK_Tbl_Answer_Tbl_User" FromRole="Tbl_User" ToRole="Tbl_Answer" />
+          <NavigationProperty Name="Tbl_Payment" Relationship="Self.FK_Tbl_Payment_Tbl_User" FromRole="Tbl_User" ToRole="Tbl_Payment" />
+          <NavigationProperty Name="Tbl_Ticket" Relationship="Self.FK_Tbl_Ticket_Tbl_User" FromRole="Tbl_User" ToRole="Tbl_Ticket" />
+        </EntityType>
+        <Association Name="FK_Tbl_Answer_Tbl_Question">
+          <End Role="Tbl_Question" Type="Self.Tbl_Question" Multiplicity="1" />
+          <End Role="Tbl_Answer" Type="Self.Tbl_Answer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Question">
+              <PropertyRef Name="PK_QuestionId" />
+            </Principal>
+            <Dependent Role="Tbl_Answer">
+              <PropertyRef Name="FK_QuestionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Answer_Tbl_User">
+          <End Role="Tbl_User" Type="Self.Tbl_User" Multiplicity="1" />
+          <End Role="Tbl_Answer" Type="Self.Tbl_Answer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_User">
+              <PropertyRef Name="PK_UserId" />
+            </Principal>
+            <Dependent Role="Tbl_Answer">
+              <PropertyRef Name="FK_UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Payment_Tbl_User">
+          <End Role="Tbl_User" Type="Self.Tbl_User" Multiplicity="1" />
+          <End Role="Tbl_Payment" Type="Self.Tbl_Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_User">
+              <PropertyRef Name="PK_UserId" />
+            </Principal>
+            <Dependent Role="Tbl_Payment">
+              <PropertyRef Name="FK_UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Ticket_Tbl_Ticket">
+          <End Role="Tbl_Ticket" Type="Self.Tbl_Ticket" Multiplicity="0..1" />
+          <End Role="Tbl_Ticket1" Type="Self.Tbl_Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Ticket">
+              <PropertyRef Name="PK_TicketId" />
+            </Principal>
+            <Dependent Role="Tbl_Ticket1">
+              <PropertyRef Name="FK_TicketParent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Ticket_Tbl_User">
+          <End Role="Tbl_User" Type="Self.Tbl_User" Multiplicity="0..1" />
+          <End Role="Tbl_Ticket" Type="Self.Tbl_Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_User">
+              <PropertyRef Name="PK_UserId" />
+            </Principal>
+            <Dependent Role="Tbl_Ticket">
+              <PropertyRef Name="FK_UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ENDEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tbl_Answer" EntityType="Self.Tbl_Answer" />
+          <EntitySet Name="Tbl_Payment" EntityType="Self.Tbl_Payment" />
+          <EntitySet Name="Tbl_Question" EntityType="Self.Tbl_Question" />
+          <EntitySet Name="Tbl_Ticket" EntityType="Self.Tbl_Ticket" />
+          <EntitySet Name="Tbl_User" EntityType="Self.Tbl_User" />
+          <AssociationSet Name="FK_Tbl_Answer_Tbl_Question" Association="Self.FK_Tbl_Answer_Tbl_Question">
+            <End Role="Tbl_Question" EntitySet="Tbl_Question" />
+            <End Role="Tbl_Answer" EntitySet="Tbl_Answer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Answer_Tbl_User" Association="Self.FK_Tbl_Answer_Tbl_User">
+            <End Role="Tbl_User" EntitySet="Tbl_User" />
+            <End Role="Tbl_Answer" EntitySet="Tbl_Answer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Payment_Tbl_User" Association="Self.FK_Tbl_Payment_Tbl_User">
+            <End Role="Tbl_User" EntitySet="Tbl_User" />
+            <End Role="Tbl_Payment" EntitySet="Tbl_Payment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Ticket_Tbl_Ticket" Association="Self.FK_Tbl_Ticket_Tbl_Ticket">
+            <End Role="Tbl_Ticket" EntitySet="Tbl_Ticket" />
+            <End Role="Tbl_Ticket1" EntitySet="Tbl_Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Ticket_Tbl_User" Association="Self.FK_Tbl_Ticket_Tbl_User">
+            <End Role="Tbl_User" EntitySet="Tbl_User" />
+            <End Role="Tbl_Ticket" EntitySet="Tbl_Ticket" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ENDModelStoreContainer" CdmEntityContainer="ENDEntities">
+          <EntitySetMapping Name="Tbl_Answer">
+            <EntityTypeMapping TypeName="ENDModel.Tbl_Answer">
+              <MappingFragment StoreEntitySet="Tbl_Answer">
+                <ScalarProperty Name="PK_AnswerId" ColumnName="PK_AnswerId" />
+                <ScalarProperty Name="UserAnswerText" ColumnName="UserAnswerText" />
+                <ScalarProperty Name="UserAnswerFileUrl" ColumnName="UserAnswerFileUrl" />
+                <ScalarProperty Name="FK_UserId" ColumnName="FK_UserId" />
+                <ScalarProperty Name="TeacherAnswerText" ColumnName="TeacherAnswerText" />
+                <ScalarProperty Name="TeacherAnswerFile" ColumnName="TeacherAnswerFile" />
+                <ScalarProperty Name="AnswerDatetime" ColumnName="AnswerDatetime" />
+                <ScalarProperty Name="TeacherReplayDatetime" ColumnName="TeacherReplayDatetime" />
+                <ScalarProperty Name="FK_QuestionId" ColumnName="FK_QuestionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Payment">
+            <EntityTypeMapping TypeName="ENDModel.Tbl_Payment">
+              <MappingFragment StoreEntitySet="Tbl_Payment">
+                <ScalarProperty Name="PK_PaymentId" ColumnName="PK_PaymentId" />
+                <ScalarProperty Name="FK_UserId" ColumnName="FK_UserId" />
+                <ScalarProperty Name="CreateDatetime" ColumnName="CreateDatetime" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+                <ScalarProperty Name="CallbackMeetDatetime" ColumnName="CallbackMeetDatetime" />
+                <ScalarProperty Name="SendError" ColumnName="SendError" />
+                <ScalarProperty Name="RecieveError" ColumnName="RecieveError" />
+                <ScalarProperty Name="HashTransaction" ColumnName="HashTransaction" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Question">
+            <EntityTypeMapping TypeName="ENDModel.Tbl_Question">
+              <MappingFragment StoreEntitySet="Tbl_Question">
+                <ScalarProperty Name="PK_QuestionId" ColumnName="PK_QuestionId" />
+                <ScalarProperty Name="QuestionType" ColumnName="QuestionType" />
+                <ScalarProperty Name="QuestionCategory" ColumnName="QuestionCategory" />
+                <ScalarProperty Name="QuestionLevel" ColumnName="QuestionLevel" />
+                <ScalarProperty Name="QuestionTitle" ColumnName="QuestionTitle" />
+                <ScalarProperty Name="QuestionText" ColumnName="QuestionText" />
+                <ScalarProperty Name="QuestionIsActive" ColumnName="QuestionIsActive" />
+                <ScalarProperty Name="CreateDatetime" ColumnName="CreateDatetime" />
+                <ScalarProperty Name="QuestionImageUrl1" ColumnName="QuestionImageUrl1" />
+                <ScalarProperty Name="QuestionImageUrl2" ColumnName="QuestionImageUrl2" />
+                <ScalarProperty Name="QuestionFileUrl" ColumnName="QuestionFileUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Ticket">
+            <EntityTypeMapping TypeName="ENDModel.Tbl_Ticket">
+              <MappingFragment StoreEntitySet="Tbl_Ticket">
+                <ScalarProperty Name="PK_TicketId" ColumnName="PK_TicketId" />
+                <ScalarProperty Name="FK_TicketParent" ColumnName="FK_TicketParent" />
+                <ScalarProperty Name="TicketText" ColumnName="TicketText" />
+                <ScalarProperty Name="TicketSubject" ColumnName="TicketSubject" />
+                <ScalarProperty Name="IsAnswer" ColumnName="IsAnswer" />
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="FK_UserId" ColumnName="FK_UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_User">
+            <EntityTypeMapping TypeName="ENDModel.Tbl_User">
+              <MappingFragment StoreEntitySet="Tbl_User">
+                <ScalarProperty Name="PK_UserId" ColumnName="PK_UserId" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="SignupCode" ColumnName="SignupCode" />
+                <ScalarProperty Name="SignupCodeExpireTime" ColumnName="SignupCodeExpireTime" />
+                <ScalarProperty Name="ResetPassCode" ColumnName="ResetPassCode" />
+                <ScalarProperty Name="ResetCodeExpireTime" ColumnName="ResetCodeExpireTime" />
+                <ScalarProperty Name="CreateDatetime" ColumnName="CreateDatetime" />
+                <ScalarProperty Name="WritingAvailable" ColumnName="WritingAvailable" />
+                <ScalarProperty Name="SpeakingAvailable" ColumnName="SpeakingAvailable" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
