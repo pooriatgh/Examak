@@ -125,6 +125,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AccuntController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SpeakingController.cs" />
     <Compile Include="Controllers\WritingController.cs" />
@@ -134,6 +135,7 @@
     </Compile>
     <Compile Include="Models\AuthorizationEN.cs" />
     <Compile Include="Models\HashHandler.cs" />
+    <Compile Include="Models\PaymentHandler.cs" />
     <Compile Include="Models\SMSHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -183,6 +185,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Payment\" />
     <Folder Include="Views\Speaking\" />
   </ItemGroup>
   <ItemGroup>
