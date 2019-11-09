@@ -17,12 +17,47 @@
 <hr />
 <a onclick="GetProperExam()" class="btn btn-default">Test writing GetProperExam</a>
 <br />
-<input type="hidden" id="writingId" name="name"  value="0f8fad5b-d9cb-469f-a165-70867728950e" />
+<input type="hidden" id="writingId" name="name" value="0f8fad5b-d9cb-469f-a165-70867728950e" />
 <input type="text" id="answer" name="name" placeholder="answer" style="width:200px;height:200px" value="" />
 <a onclick="SubmitAnswer()" class="btn btn-default">Test writing SubmitAnswer</a>
 <a onclick="GetCorrection()" class="btn btn-default">Test writing GetCorrection</a>
+<hr />
+<a onclick="GetProperExam()" class="btn btn-default">Test speaking GetProperExam</a>
+<br />
+<input type="hidden" id="speakingId" name="name" value="0f8fad5b-d9cb-469f-a165-70867728950e" />
+<a onclick="SubmitAnswer()" class="btn btn-default">Test speaking SubmitAnswer</a>
+<a onclick="GetCorrection()" class="btn btn-default">Test speaking GetCorrection</a>
+<hr />
+<h2>Test voice recording</h2>
+
+<input type="file" accept="audio/*" capture id="recorder">
+<audio id="player" controls></audio>
+<script>
+    const recorder = document.getElementById('recorder');
+    const player = document.getElementById('player');
+
+    recorder.addEventListener('change', function (e) {
+        const file = e.target.files[0];
+        const url = URL.createObjectURL(file);
+        // Do something with the audio file.
+        player.src = url;
+    });
+</script>
+<hr />
+<h2>Test voice record.js</h2>
+<div id="controls">
+    <button id="recordButton">Record</button>
+    <button id="pauseButton" disabled>Pause</button>
+    <button id="stopButton" disabled>Stop</button>
+</div>
+<h3>Recordings</h3>
+<ol id="recordingsList"></ol>
+<!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+<script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+
 
 @section scripts{
     <script src="~/Scripts/Costume/Accunt.js"></script>
-    <script src="~/Scripts/Costume/Writing.js"></script>
+    <script src="~/Scripts/Costume/Speaking.js"></script>
+    <script src="~/Scripts/Costume/HandlerAudio.js"></script>
 }
