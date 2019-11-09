@@ -111,7 +111,8 @@ namespace Exam.Controllers
             var db = new ENDEntities();
             var user = (Tbl_User)Session["UserSession"];
             var answerList = db.Tbl_Answer.Where(p => p.FK_UserId==user.PK_UserId &&
-            p.TeacherAnswerText == String.Empty && p.TeacherAnswerFile==String.Empty).ToList();
+            p.TeacherAnswerText == String.Empty && p.TeacherAnswerFile==String.Empty 
+            && p.Tbl_Question.QuestionType == "writing").ToList();
             if (answerList != null)
             {
                 return Json(answerList.Count);
@@ -122,7 +123,7 @@ namespace Exam.Controllers
         {
             var db = new ENDEntities();
             var user = (Tbl_User)Session["UserSession"];
-            var answerList = db.Tbl_Answer.Where(p => p.FK_UserId == user.PK_UserId &&
+            var answerList = db.Tbl_Answer.Where(p => p.FK_UserId == user.PK_UserId && p.Tbl_Question.QuestionType == "writing" &&
             (p.TeacherAnswerText != String.Empty || p.TeacherAnswerFile != String.Empty)).ToList();
             if (answerList != null)
             {

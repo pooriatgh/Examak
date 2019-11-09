@@ -238,7 +238,7 @@
     <Content Include="Views\Writing\WritingPanel.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\SpeakingFiles\" />
     <Folder Include="Views\Payment\" />
     <Folder Include="Views\Speaking\" />
   </ItemGroup>

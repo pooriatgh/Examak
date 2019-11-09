@@ -1,8 +1,8 @@
-﻿function GetProperExam() {
+﻿function GetProperExam(speakingId) {
     var level = 3
     var isRandom = false
     var category = 'travel'
-    var data = { 'level': level, 'isRandom': isRandom, 'category': category }
+    var data = { 'level': level, 'isRandom': isRandom, 'category': category, 'speakingId': speakingId}
 
     $.post("/speaking/GetProperExam",
         data, function (result) {
@@ -30,9 +30,23 @@ function SubmitAnswer() {
         });
 }
 
-function GetCorrection() {
+function GetCorrectionList() {
     var speakingId = $("#speakingId").val()
     var data = { 'speakingId': speakingId }
+    $.post("/speaking/GetCorrectionList",
+        data, function (result) {
+            alert(result)
+            if (result == "nok") {
+                window.location.replace("/home/about");
+            }
+            else {
+            }
+        });
+}
+
+function GetCorrection() {
+    var answerId = $("#answerId").val()
+    var data = { 'answerId': answerId }
     $.post("/speaking/GetCorrection",
         data, function (result) {
             alert(result)
