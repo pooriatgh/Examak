@@ -2,30 +2,458 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<!--==========================
+   Intro Section
+ ============================-->
+<section id="intro" class="clearfix">
+    <div class="container">
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <div style="float:right;text-align:right"  class="intro-info">
+            <h2  style="font-family:Byekan;" >با اگزمک برای<br><b style="color:lightskyblue" >آزمون زبان انگلیسی</b><br>آماده شوید</h2>
+            <div>
+                <a href="#about" class="btn-get-started scrollto">ورود</a>
+                <a href="#services" class="btn-services scrollto">ثبت نام</a>
+            </div>
+        </div>
+        <div class="intro-img">
+            <img src="~/Content/SinglePage/img/intro-img.svg" alt="" class="img-fluid">
+        </div>
+
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+</section><!-- #intro -->
+
+<main id="main">
+
+    <!--==========================
+      About Us Section
+    ============================-->
+    <section id="about">
+        <div class="container">
+
+            <header class="section-header">
+                <h3 style="font-family:Byekan" >نحوه استفاده</h3>
+                <p>
+                    برای یادگیری آزمون های زبان انگلیسی مانند آیلتس می توانید از سایت اگزمک
+                    تکنیک ها و روش های آزمون را یاد بگیرید.
+                </p>
+            </header>
+
+            <div class="row about-container">
+
+                <div class="col-lg-6 content order-lg-1 order-2">
+                    <p>
+                        
+                    </p>
+
+                    <div style="text-align:right" class="icon-box wow fadeInUp">
+                        <div class="icon"><i class="fa fa-pencil"></i></div>
+                        <h4 class="title"><a href="">تقویت رایتینگ</a></h4>
+                        <p class="description">
+                            در سایت اگزمک این امکان فراهم شده است که شما با پاسخ به نمونه سوالات شبیه سازی شده ،
+                            رایتینگ خود را تقویت کنید. متن شما تصحیح شده و به همراه ایرادات برایتان ارسال می گردد.
+                        </p>
+                    </div>
+
+                    <div style="text-align:right" class="icon-box wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="icon"><i class="fa fa-microphone"></i></div>
+                        <h4 class="title"><a href="">تقویت اسپیکینگ</a></h4>
+                        <p class="description">در سایت تعداد زیادی نمونه سوال اسپیکینگ آیلتس قرار داده شده است که شما با ارسال فایل صوتی خود و دریافت 
+                        ایرادات خود می توانید مهارت صحبت به زبان انگلیسی خود را تقویت کنید</p>
+                    </div>
+
+                    <div style="text-align:right"  class="icon-box wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="icon"><i class="fa fa-bar-chart"></i></div>
+                        <h4 class="title"><a href="">تحلیل سطح زبان</a></h4>
+                        <p class="description">
+                            بر اساس نمرات شما و مقایسه با سطوح اصلی آزمون آیلتس و تافل
+                            نمره تخمینی هر مهارت برای شما محاسبه می شود
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 background order-lg-2 order-1 wow fadeInUp">
+                    <img src="~/Content/SinglePage/img/about-extra-2.svg" class="img-fluid" alt="">
+                </div>
+            </div>
+
+            <div class="row about-extra">
+                <div class="col-lg-6 wow fadeInUp">
+                    <img src="~/Content/SinglePage/img/about-extra-1.svg" class="img-fluid" alt="">
+                </div>
+                <div style="text-align:right;font-family:Byekan" class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
+                    <h4 style="font-family:Byekan" >اگر در استفاده از سایت اگزمک شک دارید</h4>
+                    <p>
+                        می توانید از طریق لینک زیر نمونه های تصحیح شده فایل متنی و صوتی را ببینید.
+                        پاسخ های شما نیز با همین کیفیت تصحیح خواهد شد
+                    </p>
+                    <a href="" class="btn btn-lg btn-warning">مشاهده نمونه پاسخ</a>
+                    <a href="" class="btn btn-lg btn-danger">مشاهده نمونه سوال</a>
+                </div>
+            </div>
+
+           
+
+        </div>
+    </section><!-- #about -->
+  
+  
+    <!--==========================
+      Why Us Section
+    ============================-->
+    <section id="why-us" class="wow fadeIn">
+        <div class="container">
+            <header class="section-header">
+                <h3 style="font-family:Byekan" >چرا سایت اگزمک</h3>
+                <p>
+                    با کمک سایت اگزمک با کمترین هزینه و بدون رفت و آمد
+                    برای آزمون های بین المللی زبان انگلیسی آماده شوید.
+                </p>
+            </header>
+
+            <div class="row row-eq-height justify-content-center">
+
+                <div class="col-lg-4 mb-4">
+                    <div class="card wow bounceInUp">
+                        <i class="fa fa-diamond"></i>
+                        <div class="card-body">
+                            <h5 style="font-family:Byekan" class="card-title">دقیق و حرفه ای</h5>
+                            <p class="card-text">
+                                در موسسه اگزمک پاسخ های شما با دقت زیاد و توسط کارشناسان آزمون زبان بررسی می شوند
+                                از نمرات دریافتی خود مطمئن باشید.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+                    <div class="card wow bounceInUp">
+                        <i class="fa fa-language"></i>
+                        <div class="card-body">
+                            <h5 style="font-family:Byekan" class="card-title">حامی شما در یادگیری زبان</h5>
+                            <p class="card-text">
+                                با ارائه نکات کاربردی در پاسخ های شما
+                                با سرعت بیشتر برای آزمون های زبان آماده شوید
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4">
+                    <div class="card wow bounceInUp">
+                        <i class="fa fa-object-group"></i>
+                        <div class="card-body">
+                            <h5 style="font-family:Byekan" class="card-title">سوالات جدید</h5>
+                            <p class="card-text">
+                                بانک سوالات سایت با توجه به آزمون های برگزاری همواره در حال بروز رسانی می باشد.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row counters">
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-toggle="counter-up">3000</span>
+                    <p>دانشجو</p>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-toggle="counter-up">2000</span>
+                    <p>متن تصحیح شده</p>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-toggle="counter-up">2000</span>
+                    <p>فایل صوتی تصحیح شده</p>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center">
+                    <span data-toggle="counter-up">700</span>
+                    <p>سوال جدید</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!--==========================
+      Portfolio Section
+    ============================-->
+    <section id="portfolio" class="clearfix">
+        <div class="container">
+
+            <header class="section-header">
+                <h3 style="font-family:Byekan" class="section-title">گالری تصاویر</h3>
+            </header>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul id="portfolio-flters">
+                        <li data-filter="*" class="filter-active">همه</li>
+                        <li data-filter=".filter-company" >اگزمک</li>
+                        <li data-filter=".filter-app">متن تصحیح شده</li>
+                        <li data-filter=".filter-card">پنل سایت</li>
+                        <li data-filter=".filter-web">نمونه سوالات</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row portfolio-container">
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-company">
+                    <div class="portfolio-wrap">
+                        <img src="~/Content/SinglePage/img/pic1.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <div>
+                                <a href="~/Content/SinglePage/img/pic1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-company" data-wow-delay="0.1s">
+                    <div class="portfolio-wrap">
+                        <img src="~/Content/SinglePage/img/pic2.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <div>
+                                <a href="~/Content/SinglePage/img/pic2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
+                                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-company" data-wow-delay="0.2s">
+                    <div class="portfolio-wrap">
+                        <img src="~/Content/SinglePage/img/pic3.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <div>
+                                <a href="~/Content/SinglePage/img/pic3.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview"><i class="ion ion-eye"></i></a>
+                                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                    <div class="portfolio-wrap">
+                        <img src="~/Content/SinglePage/img/portfolio/card2.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4><a href="#">Card 2</a></h4>
+                            <p>Card</p>
+                            <div>
+                                <a href="~/Content/SinglePage/img/portfolio/card2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 2" title="Preview"><i class="ion ion-eye"></i></a>
+                                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-web" data-wow-delay="0.1s">
+                    <div class="portfolio-wrap">
+                        <img src="~/Content/SinglePage/img/portfolio/web2.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4><a href="#">Web 2</a></h4>
+                            <p>Web</p>
+                            <div>
+                                <a href="~/Content/SinglePage/img/portfolio/web2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 2" title="Preview"><i class="ion ion-eye"></i></a>
+                                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app" data-wow-delay="0.2s">
+                    <div class="portfolio-wrap">
+                        <img src="~/Content/SinglePage/img/portfolio/app3.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4><a href="#">App 3</a></h4>
+                            <p>App</p>
+                            <div>
+                                <a href="~/Content/SinglePage/img/portfolio/app3.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 3" title="Preview"><i class="ion ion-eye"></i></a>
+                                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                    <div class="portfolio-wrap">
+                        <img src="~/Content/SinglePage/img/portfolio/card1.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4><a href="#">Card 1</a></h4>
+                            <p>Card</p>
+                            <div>
+                                <a href="~/Content/SinglePage/img/portfolio/card1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
+                                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-card" data-wow-delay="0.1s">
+                    <div class="portfolio-wrap">
+                        <img src="~/Content/SinglePage/img/portfolio/card3.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4><a href="#">Card 3</a></h4>
+                            <p>Card</p>
+                            <div>
+                                <a href="~/Content/SinglePage/img/portfolio/card3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-web" data-wow-delay="0.2s">
+                    <div class="portfolio-wrap">
+                        <img src="~/Content/SinglePage/img/portfolio/web1.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4><a href="#">Web 1</a></h4>
+                            <p>Web</p>
+                            <div>
+                                <a href="~/Content/SinglePage/img/portfolio/web1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
+                                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- #portfolio -->
+   
+    <section id="contact">
+        <div class="container-fluid">
+
+            <div class="section-header">
+                <h3>Contact Us</h3>
+            </div>
+
+            <div class="row wow fadeInUp">
+
+                <div class="col-lg-6">
+                    <div class="map mb-4 mb-lg-0">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d809.9896406852829!2d51.406036188125384!3d35.70263729875575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e01a9cd0203db%3A0x9e9a0a5f7f3ffa5a!2z2YHYttin24wg2qnYp9ixINin2LTYqtix2KfaqduMINmB24zZhtmI2YjYpw!5e0!3m2!1sen!2s!4v1546067731554" width="600" height="450" frameborder="0" style="border: 0px; pointer-events: none;" allowfullscreen=""></iframe>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-md-5 info">
+                            <i class="ion-ios-location-outline"></i>
+                            <p>Tehran, Enghelab St, Between Valiasr St and Hafez St</p>
+                        </div>
+                        <div class="col-md-4 info">
+                            <i class="ion-ios-email-outline"></i>
+                            <p>info@examak.ir</p>
+                        </div>
+                        
+                    </div>
+
+                    <div class="form">
+                        <div id="sendmessage">Your message has been sent. Thank you!</div>
+                        <div id="errormessage"></div>
+                        <form action="" method="post" role="form" class="contactForm">
+                            <div class="form-row">
+                                <div class="form-group col-lg-6">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                    <div class="validation"></div>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                                    <div class="validation"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                                <div class="validation"></div>
+                            </div>
+                            <div class="text-center"><button type="submit" title="Send Message">Send Message</button></div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- #contact -->
+
+</main>
+
+<!--==========================
+  Footer
+============================-->
+<footer id="footer">
+    @*<div class="footer-top">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6 footer-info">
+                    <h3>NewBiz</h3>
+                    <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+                </div>
+
+                <div class="col-lg-2 col-md-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Terms of service</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>
+                        A108 Adam Street <br>
+                        New York, NY 535022<br>
+                        United States <br>
+                        <strong>Phone:</strong> +1 5589 55488 55<br>
+                        <strong>Email:</strong> info@example.com<br>
+                    </p>
+
+                    <div class="social-links">
+                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                        <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-newsletter">
+                    <h4>Our Newsletter</h4>
+                    <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
+                    <form action="" method="post">
+                        <input type="email" name="email"><input type="submit" value="Subscribe">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>*@
+
+    <div class="container">
+        <div class="copyright">
+            &copy; Copyright <strong>Examak</strong>. All Rights Reserved
+        </div>
+        
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+</footer><!-- #footer -->
+
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>

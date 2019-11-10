@@ -1,0 +1,10 @@
+﻿@font-face {
+    font-family: 'BTitrBold';
+    src: url('/fonts/Btitr/BTitrBold.eot') format('eot'),
+        url('/fonts/Btitr/BTitrBold.ttf') format('truetype'),
+        url('/fonts/Btitr/BTitrBold.woff') format('woff');
+}
+
+* {
+    font-family: 'BTitrBold';
+}

@@ -1,42 +1,93 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-</head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link href="~/fonts/Byekan/ByekanFont.css" rel="stylesheet" />
+    <!-- Favicons -->
+    <link href="~/Content/SinglePage/img/favicon.png" rel="icon">
+    <link href="~/Content/SinglePage/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+   
+    <!-- Bootstrap CSS File -->
+    <link href="~/Content/SinglePage/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="~/Content/SinglePage/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Content/SinglePage/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="~/Content/SinglePage/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="~/Content/SinglePage/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="~/Content/SinglePage/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="~/Content/SinglePage/css/style.css" rel="stylesheet">
+
+   
+</head>
+
+<body class="Persian-font" >
+
+    <!--==========================
+    Header
+    ============================-->
+    <header id="header" class="fixed-top Persian-font">
+        <div class="container">
+
+            <div class="logo float-left">
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
+                <a href="#intro" class="scrollto"><img src="~/Content/SinglePage/img/logo.png" alt="" class="img-fluid"></a>
+            </div>
+
+            <nav class="main-nav float-right d-none d-lg-block">
+                <ul>
+                    <li  class="active"><a style="font-family:'Byekan'" href="@Url.Action("Index","Home")">خانه</a></li>
+                    <li><a style="font-family:'Byekan'" href="@Url.Action("about","Home")">درباره ما</a></li>
+                    <li><a style="font-family:'Byekan'" href="@Url.Action("Index","Home")">تماس با ما</a></li>
+                    <li><a style="font-family:'Byekan'; color:white;text-decoration:none" href="#team" class="btn btn-danger" >ثبت نام/ورود</a></li>
+                    
+                </ul>
+            </nav><!-- .main-nav -->
+
+        </div>
+    </header>
+    <!-- #header -->
+
+    @RenderBody()
+    <!-- Uncomment below i you want to use a preloader -->
+    <!-- <div id="preloader"></div> -->
+    <!-- JavaScript Libraries -->
+    <script src="~/Content/SinglePage/lib/jquery/jquery.min.js"></script>
+    <script src="~/Content/SinglePage/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="~/Content/SinglePage/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/SinglePage/lib/easing/easing.min.js"></script>
+    <script src="~/Content/SinglePage/lib/mobile-nav/mobile-nav.js"></script>
+    <script src="~/Content/SinglePage/lib/wow/wow.min.js"></script>
+    <script src="~/Content/SinglePage/lib/waypoints/waypoints.min.js"></script>
+    <script src="~/Content/SinglePage/lib/counterup/counterup.min.js"></script>
+    <script src="~/Content/SinglePage/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="~/Content/SinglePage/lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="~/Content/SinglePage/lib/lightbox/js/lightbox.min.js"></script>
+    <!-- Contact Form JavaScript File -->
+    <script src="~/Content/SinglePage/contactform/contactform.js"></script>
+
+    <!-- Template Main Javascript File -->
+    <script src="~/Content/SinglePage/js/main.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

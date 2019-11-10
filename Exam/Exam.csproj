@@ -131,6 +131,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AccuntController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
@@ -182,6 +183,63 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\SinglePage\contactform\contactform.js" />
+    <Content Include="Content\SinglePage\contactform\Readme.txt" />
+    <Content Include="Content\SinglePage\css\scss-files.txt" />
+    <Content Include="Content\SinglePage\css\style.css" />
+    <Content Include="Content\SinglePage\img\about-extra-1.svg" />
+    <Content Include="Content\SinglePage\img\about-extra-2.svg" />
+    <Content Include="Content\SinglePage\img\about-img.svg" />
+    <Content Include="Content\SinglePage\img\apple-touch-icon.png" />
+    <Content Include="Content\SinglePage\img\favicon.png" />
+    <Content Include="Content\SinglePage\img\intro-bg.png" />
+    <Content Include="Content\SinglePage\img\intro-img.svg" />
+    <Content Include="Content\SinglePage\img\logo.png" />
+    <Content Include="Content\SinglePage\img\pic1.jpg" />
+    <Content Include="Content\SinglePage\img\pic2.jpg" />
+    <Content Include="Content\SinglePage\img\pic3.jpg" />
+    <Content Include="Content\SinglePage\js\main.js" />
+    <Content Include="Content\SinglePage\lib\animate\animate.css" />
+    <Content Include="Content\SinglePage\lib\animate\animate.min.css" />
+    <Content Include="Content\SinglePage\lib\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\SinglePage\lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\SinglePage\lib\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\SinglePage\lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\SinglePage\lib\counterup\counterup.min.js" />
+    <Content Include="Content\SinglePage\lib\easing\easing.js" />
+    <Content Include="Content\SinglePage\lib\easing\easing.min.js" />
+    <Content Include="Content\SinglePage\lib\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\SinglePage\lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\SinglePage\lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\SinglePage\lib\ionicons\css\ionicons.css" />
+    <Content Include="Content\SinglePage\lib\ionicons\css\ionicons.min.css" />
+    <Content Include="Content\SinglePage\lib\ionicons\fonts\ionicons.svg" />
+    <Content Include="Content\SinglePage\lib\isotope\isotope.pkgd.js" />
+    <Content Include="Content\SinglePage\lib\isotope\isotope.pkgd.min.js" />
+    <Content Include="Content\SinglePage\lib\jquery\jquery-migrate.min.js" />
+    <Content Include="Content\SinglePage\lib\jquery\jquery.min.js" />
+    <Content Include="Content\SinglePage\lib\lightbox\css\lightbox.css" />
+    <Content Include="Content\SinglePage\lib\lightbox\css\lightbox.min.css" />
+    <Content Include="Content\SinglePage\lib\lightbox\images\close.png" />
+    <Content Include="Content\SinglePage\lib\lightbox\images\loading.gif" />
+    <Content Include="Content\SinglePage\lib\lightbox\images\next.png" />
+    <Content Include="Content\SinglePage\lib\lightbox\images\prev.png" />
+    <Content Include="Content\SinglePage\lib\lightbox\js\lightbox.js" />
+    <Content Include="Content\SinglePage\lib\lightbox\js\lightbox.min.js" />
+    <Content Include="Content\SinglePage\lib\mobile-nav\mobile-nav.js" />
+    <Content Include="Content\SinglePage\lib\owlcarousel\assets\ajax-loader.gif" />
+    <Content Include="Content\SinglePage\lib\owlcarousel\assets\owl.carousel.css" />
+    <Content Include="Content\SinglePage\lib\owlcarousel\assets\owl.carousel.min.css" />
+    <Content Include="Content\SinglePage\lib\owlcarousel\assets\owl.theme.default.css" />
+    <Content Include="Content\SinglePage\lib\owlcarousel\assets\owl.theme.default.min.css" />
+    <Content Include="Content\SinglePage\lib\owlcarousel\assets\owl.theme.green.css" />
+    <Content Include="Content\SinglePage\lib\owlcarousel\assets\owl.theme.green.min.css" />
+    <Content Include="Content\SinglePage\lib\owlcarousel\assets\owl.video.play.png" />
+    <Content Include="Content\SinglePage\lib\owlcarousel\owl.carousel.js" />
+    <Content Include="Content\SinglePage\lib\owlcarousel\owl.carousel.min.js" />
+    <Content Include="Content\SinglePage\lib\waypoints\waypoints.min.js" />
+    <Content Include="Content\SinglePage\lib\wow\wow.js" />
+    <Content Include="Content\SinglePage\lib\wow\wow.min.js" />
     <Content Include="Data\MainModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>MainModel.edmx</DependentUpon>
@@ -193,6 +251,8 @@
       <LastGenOutput>MainModel.cs</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
+    <Content Include="fonts\Btitr\Btitr.css" />
+    <Content Include="fonts\Byekan\ByekanFont.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -205,6 +265,21 @@
     <Content Include="Data\MainModel.edmx.diagram">
       <DependentUpon>MainModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\SinglePage\lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\SinglePage\lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\SinglePage\lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\SinglePage\lib\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\SinglePage\lib\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\SinglePage\lib\ionicons\fonts\ionicons.eot" />
+    <Content Include="Content\SinglePage\lib\ionicons\fonts\ionicons.ttf" />
+    <Content Include="Content\SinglePage\lib\ionicons\fonts\ionicons.woff" />
+    <Content Include="Content\SinglePage\lib\owlcarousel\LICENSE" />
+    <Content Include="fonts\Btitr\BTitrBold.eot" />
+    <Content Include="fonts\Btitr\BTitrBold.ttf" />
+    <Content Include="fonts\Btitr\BTitrBold.woff" />
+    <Content Include="fonts\Byekan\BYekan.eot" />
+    <Content Include="fonts\Byekan\BYekan.ttf" />
+    <Content Include="fonts\Byekan\BYekan.woff" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Costume\Accunt.js" />
     <Content Include="Scripts\Costume\HandlerAudio.js" />
@@ -240,6 +315,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\SpeakingFiles\" />
+    <Folder Include="Views\Contact\" />
     <Folder Include="Views\Payment\" />
     <Folder Include="Views\Speaking\" />
     <Folder Include="Views\Ticket\" />

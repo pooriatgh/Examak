@@ -1,0 +1,29 @@
+﻿@font-face {
+  font-family: 'Byekan';
+  src: url('/fonts/Byekan/BYekan.eot?#') format('eot'),  
+       url('/fonts/Byekan/BYekan.woff') format('woff'),  
+       url('/fonts/Byekan/BYekan.ttf') format('truetype'),
+       url('/fonts/Byekan/BYekan.eot?#') format('eot'),  /* IE6-8 */
+       url('/fonts/Byekan/BYekan.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('/fonts/Byekan/BYekan.ttf') format('truetype');  /* Saf3-5, Chrome4+, FF3.5, Opera 10+ */
+  font-weight: normal;
+  font-style: normal;
+}
+
+body a{
+    font-family: Byekan !important;
+}
+.Persian-font {
+  font-family:Byekan !important;
+  /*font-size: 12px;
+  line-height: 1.428571429;
+  color: #333;*/
+  /*background-color: #fff;*/
+}
+.h1 h2 h3 h4 h5 a {
+    font-family:Byekan !important;
+}
+/** {
+ font-size: 100%;
+ font-family: Byekan !important;
+}*/
