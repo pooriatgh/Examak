@@ -48,7 +48,8 @@
                     <li  class="active"><a style="font-family:'Byekan'" href="@Url.Action("Index","Home")">خانه</a></li>
                     <li><a style="font-family:'Byekan'" href="@Url.Action("about","Home")">درباره ما</a></li>
                     <li><a style="font-family:'Byekan'" href="@Url.Action("Index","Home")">تماس با ما</a></li>
-                    <li><a style="font-family:'Byekan'; color:white;text-decoration:none" href="#team" class="btn btn-danger" >ثبت نام/ورود</a></li>
+                    <li><a style="font-family:'Byekan'; color:white;text-decoration:none" data-toggle="modal" data-target="#signupModal" href="#team" class="btn btn-danger" >ثبت نام</a></li>
+                    <li><a style="font-family:'Byekan'; color:white;text-decoration:none" data-toggle="modal" data-target="#signinModal" href="#team" class="btn btn-success">ورود</a></li>
                     
                 </ul>
             </nav><!-- .main-nav -->
@@ -58,7 +59,80 @@
     <!-- #header -->
 
     @RenderBody()
+   
+    <!-- Modal -->
+    <div class="modal fade" id="signupModal" style="text-align:right" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div style="background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(0,66,138,1) 100%);" class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        
+                    </h5>
+                    <button type="button" class="close"  data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div style="direction:rtl;" class="modal-body">
+                    <form>
+                        <fieldset >
+                            <div class="form-group">
+                                <label for="mobile">موبایل</label>
+                                <input type="text" id="mobile" class="form-control" placeholder="0912">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">
+                                    رمز عبور
+                                </label>
+                                <input type="password" id="password" class="form-control" >
+                            </div>
+                            <div class="form-group">
+                                <label for="repeatPassword">
+                                    تکرار رمز عبور
+                                </label>
+                                <input type="password" id="repeatPassword" class="form-control" >
+                            </div>
+                            <button type="submit" class="btn btn-primary">ثبت نام</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Uncomment below i you want to use a preloader -->
+    <!-- Modal -->
+    <div class="modal fade" id="signinModal" style="text-align:right" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div style="background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(0,66,138,1) 100%);" class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                       
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div style="direction:rtl;" class="modal-body">
+                    <form>
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="mobile">موبایل</label>
+                                <input type="text" id="mobile" class="form-control" placeholder="0912">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">
+                                    رمز عبور
+                                </label>
+                                <input type="password" id="password" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary">ورود</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- <div id="preloader"></div> -->
     <!-- JavaScript Libraries -->
     <script src="~/Content/SinglePage/lib/jquery/jquery.min.js"></script>
