@@ -136,6 +136,7 @@
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SpeakingController.cs" />
+    <Compile Include="Controllers\TicketController.cs" />
     <Compile Include="Controllers\WritingController.cs" />
     <Compile Include="Data\MainModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -241,6 +242,7 @@
     <Folder Include="App_Data\SpeakingFiles\" />
     <Folder Include="Views\Payment\" />
     <Folder Include="Views\Speaking\" />
+    <Folder Include="Views\Ticket\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

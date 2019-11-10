@@ -14,7 +14,7 @@ function GetTransaction() {
 
 function GetTicketList() {
 
-    $.post("/Profile/GetTicketList",
+    $.post("/Ticket/GetTicketList",
         null, function (result) {
             alert(result)
             if (result == "nok") {
@@ -24,6 +24,20 @@ function GetTicketList() {
             }
         });
 }
+
+function GetticketSublist(ticketId) {
+    var data = { 'ticketId': ticketId }
+    $.post("/Ticket/GetticketSublist",
+        data, function (result) {
+            if (result == "nok") {
+                window.location.replace("/home/about");
+            }
+            else {
+            }
+        });
+}
+
+
 
 function ShowTicketThread(ticketRootId) {
     var ticketRootId = ticketRootId
