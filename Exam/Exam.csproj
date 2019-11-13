@@ -3671,6 +3671,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\recorder.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -3688,13 +3689,13 @@
     <Content Include="Views\Profile\Index.cshtml" />
     <Content Include="Views\Writing\WritingPanel.cshtml" />
     <Content Include="Views\Shared\_Layout_Panel.cshtml" />
+    <Content Include="Views\Speaking\SpeakingPanel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\SpeakingFiles\" />
     <Folder Include="Content\Panel\vendor\devbridge-autocomplete\typings\jquery-autocomplete\" />
     <Folder Include="Views\Contact\" />
     <Folder Include="Views\Payment\" />
-    <Folder Include="Views\Speaking\" />
     <Folder Include="Views\Ticket\" />
   </ItemGroup>
   <ItemGroup>

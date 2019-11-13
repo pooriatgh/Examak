@@ -12,11 +12,11 @@ namespace Exam.Models
         public string ActionName { get; set; }
         public void OnAuthentication(AuthenticationContext filterContext)
         {
-            var user = filterContext.RequestContext.HttpContext.Session["UserSession"];
-            if (user == null)
-            {
-                filterContext.Result = new System.Web.Mvc.RedirectResult("~/Home/Index?KickOut=True");
-            }
+            //var user = filterContext.RequestContext.HttpContext.Session["UserSession"];
+            //if (user == null)
+            //{
+            //    filterContext.Result = new System.Web.Mvc.RedirectResult("~/Home/Index?KickOut=True");
+            //}
         }
 
         public void OnAuthenticationChallenge(AuthenticationChallengeContext filterContext)

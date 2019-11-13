@@ -37,7 +37,7 @@ namespace Exam.Controllers
         {
             var db = new ENDEntities();
             mobile = mobile.Replace("+", "").Replace("98", "");
-            if (mobile.ElementAt(0) != 0)
+            if (mobile.ElementAt(0) != '0')
             {
                 mobile = "0" + mobile;
             }

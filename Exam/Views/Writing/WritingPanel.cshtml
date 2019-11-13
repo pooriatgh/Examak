@@ -1,7 +1,57 @@
 ﻿
 @{
     ViewBag.Title = "WritingPanel";
+    Layout = "~/Views/Shared/_Layout_Panel.cshtml";
 }
 
-<h2>WritingPanel</h2>
 
+<div class="container">
+    <br />
+    <div style="text-align:center" class="row">
+        <div class="col-lg-6">
+            <div class="panel panel-primary">
+
+                <div class="panel-heading">
+                    <h3>
+                        سوال رایتینگ
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3>
+                      پاسخ شما
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <textarea style="width:100%;height:100%;min-height:400px;text-align:left;direction:ltr" ></textarea>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div style="padding:5px" class="col-xs-6">
+                            <a style="width:100%;" class="btn  btn-success">
+                                
+                                    ارسال
+                                <i class="fa fa-send" ></i>
+                            </a>
+                        </div>
+                        <div style="padding:5px;" class="col-xs-6">
+                            <a style="width:100%;" class="btn  btn-warning">
+                               
+                                    ذخیره موقت
+                                <i class="fa fa-save"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

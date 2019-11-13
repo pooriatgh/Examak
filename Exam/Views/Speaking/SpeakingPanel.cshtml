@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "SpeakingPanel";
+    Layout = "~/Views/Shared/_Layout_Panel.cshtml";
+}
+
+
+<div class="container">
+    <br />
+    <div style="text-align:center" class="row">
+        <div class="col-lg-6">
+            <div class="panel panel-primary">
+
+                <div class="panel-heading">
+                    <h3>
+                        سوال اسپیکینگ
+                    </h3>
+                </div>
+                <div class="panel-body">
+                  
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3>
+                        پاسخ شما
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="alert alert-warning" role="alert">
+                        شما می توانید فایل صوتی خود را در گوشی با نرم افزارهای
+                        ضبط صدا ذخیره کرده و برای ما ارسال کنید
+                        <input type="file" value="محل ارسال فایل" />
+                    </div>
+                    <div class="alert alert-success" role="alert">
+                        و یا می توانید از پنل زیر برای ضبط صدای خود استفاده کنید
+                        و نتیجه را در سایت بارگزاری کنید.
+                        <div id="controls">
+                            <button class="btn btn-default" id="recordButton">Record</button>
+                            <button class="btn btn-default" id="pauseButton" disabled>Pause</button>
+                            <button class="btn btn-default" id="stopButton" disabled>Stop</button>
+                        </div>
+                    </div>
+                    <ol id="recordingsList"></ol>
+                    <script src="~/Scripts/recorder.js"></script>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div style="padding:5px" class="col-xs-6">
+                            <a style="width:100%;" class="btn  btn-success">
+
+                                ارسال
+                                <i class="fa fa-send"></i>
+                            </a>
+                        </div>
+                        <div style="padding:5px;" class="col-xs-6">
+                            <a style="width:100%;" class="btn  btn-warning">
+
+                                ذخیره موقت
+                                <i class="fa fa-save"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+    <script src="~/Scripts/Costume/Speaking.js"></script>
+    <script src="~/Scripts/Costume/HandlerAudio.js"></script>
+}

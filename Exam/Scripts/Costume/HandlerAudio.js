@@ -1,4 +1,5 @@
-﻿//webkitURL is deprecated but nevertheless
+﻿
+//webkitURL is deprecated but nevertheless
 URL = window.URL || window.webkitURL;
 var gumStream;
 //stream from getUserMedia()
@@ -7,8 +8,8 @@ var rec;
 var input;
 //MediaStreamAudioSourceNode we'll be recording
 // shim for AudioContext when it's not avb.
-var AudioContext = window.AudioContext || window.webkitAudioContext;
-var audioContext = new AudioContext;
+var AudioContext ;//= window.AudioContext || window.webkitAudioContext;
+var audioContext ;//= new AudioContext;
 //new audio context to help us record
 var recordButton = document.getElementById("recordButton");
 var stopButton = document.getElementById("stopButton");
@@ -19,9 +20,10 @@ stopButton.addEventListener("click", stopRecording);
 pauseButton.addEventListener("click", pauseRecording);
 
 function startRecording() {
+    var AudioContext = window.AudioContext || window.webkitAudioContext;
+    var audioContext = new AudioContext;
     console.log("recordButton clicked");
     /* Simple constraints object, for more advanced audio features see
-
 https://addpipe.com/blog/audio-constraints-getusermedia/ */
 
     var constraints = {
@@ -101,7 +103,7 @@ function createDownloadLink(blob) {
     link.innerHTML = link.download;
     //add the new audio and a elements to the li element 
     li.appendChild(au);
-    li.appendChild(link);
+    //li.appendChild(link);
     //add the li element to the ordered list 
     recordingsList.appendChild(li);
 }
