@@ -11,6 +11,12 @@ namespace Exam.Controllers
     [AuthorizationEN]
     public class TicketController : Controller
     {
+        public ActionResult Ticket()
+        {
+            return View();
+        }
+
+      
         public JsonResult GetTicketList()
         {
             var db = new ENDEntities();
@@ -23,6 +29,36 @@ namespace Exam.Controllers
                     p.TicketText,
                 }).OrderByDescending(p => p.CreateDateTime).ToList();
             return Json(ticketList);
+        }
+        public JsonResult SendReplyTicket(string message,Guid ticketRootId) {
+            var db = new ENDEntities();
+            var user = (Tbl_User)Session["UserSession"];
+            db.Tbl_Ticket.Add(new Tbl_Ticket {
+                CreateDateTime = DateTime.UtcNow,
+                FK_TicketParent = ticketRootId,
+                FK_UserId = user.PK_UserId,
+                IsAnswer = true,
+                TicketText = message,
+                TicketSubject= String.Empty
+            });
+            db.SaveChanges();
+            return Json("ok");
+        }
+        public JsonResult NewTicket(string message, string subject)
+        {
+            var db = new ENDEntities();
+            var user = (Tbl_User)Session["UserSession"];
+            db.Tbl_Ticket.Add(new Tbl_Ticket
+            {
+                CreateDateTime = DateTime.UtcNow,
+                FK_TicketParent = null,
+                FK_UserId = user.PK_UserId,
+                IsAnswer = true,
+                TicketText = message,
+                TicketSubject = subject
+            });
+            db.SaveChanges();
+            return Json("ok");
         }
         public JsonResult GetticketSublist(Guid ticketId)
         {

@@ -3690,13 +3690,13 @@
     <Content Include="Views\Writing\WritingPanel.cshtml" />
     <Content Include="Views\Shared\_Layout_Panel.cshtml" />
     <Content Include="Views\Speaking\SpeakingPanel.cshtml" />
+    <Content Include="Views\Ticket\Ticket.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\SpeakingFiles\" />
     <Folder Include="Content\Panel\vendor\devbridge-autocomplete\typings\jquery-autocomplete\" />
     <Folder Include="Views\Contact\" />
     <Folder Include="Views\Payment\" />
-    <Folder Include="Views\Ticket\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -1,0 +1,189 @@
+﻿
+@{
+    ViewBag.Title = "Ticket";
+    Layout = "~/Views/Shared/_Layout_Panel.cshtml";
+}
+
+    <div class="container">
+        <div class="clearfix"></div>
+       
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <button type="button" class="btn btn-round btn-success"><i class="fa fa-plus"></i>&nbsp;ثبت تیکت جدید &nbsp; </button>
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>
+                        لیست تیک ها
+                        <small>مرتب شده بر اساس زمان</small>
+                    </h2>
+
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="x_content">
+
+                    <div class="table-responsive">
+                        <table class="table table-striped jambo_table bulk_action">
+                            <thead>
+                                <tr class="headings">
+                                    <th>
+                                        <input type="checkbox" id="check-all" class="flat">
+                                    </th>
+                                    <th class="column-title">عنوان</th>
+                                    <th class="column-title">تاریخ ارسال</th>
+                                    <th class="column-title">وضعیت</th>
+                                    <th class="column-title no-link last">
+                                        <span class="nobr">عمل</span>
+                                    </th>
+                                    <th class="bulk-actions" colspan="7">
+                                        <a class="antoo" style="color:#fff; font-weight:500;">
+                                            عمل همگانی ( <span class="action-cnt"></span> ) <i class="fa fa-chevron-down"></i>
+                                        </a>
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr class="even pointer">
+                                    <td class="a-center ">
+                                        <input type="checkbox" class="flat" name="table_records">
+                                    </td>
+                                    <td class=" ">121000040</td>
+                                    <td class=" ">May 27, 2014 11:47:56 PM</td>
+                                    <td class=" ">121000210</td>
+                                    <td class=" last">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                data-target=".bs-example-modal-lg">
+                                            مشاهده
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="odd pointer">
+                                    <td class="a-center ">
+                                        <input type="checkbox" class="flat" name="table_records">
+                                    </td>
+                                    <td class=" ">121000040</td>
+                                    <td class=" ">May 27, 2014 11:47:56 PM</td>
+                                    <td class=" ">121000210</td>
+                                    <td class=" last">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                data-target=".bs-example-modal-lg">
+                                            مشاهده
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">مجموعه پاسخ</h4>
+            </div>
+            <div class="modal-body">
+                <ul class="list-unstyled timeline">
+                    <li>
+                        <div class="block">
+                            <div class="tags">
+                                <a href="" class="tag">
+                                    <span>سرگرمی</span>
+                                </a>
+                            </div>
+                            <div class="block_content">
+                                <h2 class="title">
+                                    <a>چه کسی خوشحال است هنگامی که شما در حال پیشرفت هستید؟</a>
+                                </h2>
+                                <div class="byline">
+                                    <span>13 ساعت پیش</span> توسط <a>مرتضی کریمی</a>
+                                </div>
+                                <p class="excerpt">
+                                    کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان
+                                    جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه
+                                    ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد...<a>بیشتر&nbsp;بخوانید</a>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <div class="tags">
+                                <a href="" class="tag">
+                                    <span>سرگرمی</span>
+                                </a>
+                            </div>
+                            <div class="block_content">
+                                <h2 class="title">
+                                    <a>چه کسی خوشحال است هنگامی که شما در حال پیشرفت هستید؟</a>
+                                </h2>
+                                <div class="byline">
+                                    <span>13 ساعت پیش</span> توسط <a>مرتضی کریمی</a>
+                                </div>
+                                <p class="excerpt">
+                                    کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان
+                                    جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه
+                                    ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد... <a>بیشتر&nbsp;بخوانید</a>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block">
+                            <div class="tags">
+                                <a href="" class="tag">
+                                    <span>سرگرمی</span>
+                                </a>
+                            </div>
+                            <div class="block_content">
+                                <h2 class="title">
+                                    <a>چه کسی خوشحال است هنگامی که شما در حال پیشرفت هستید؟</a>
+                                </h2>
+                                <div class="byline">
+                                    <span>13 ساعت پیش</span> توسط <a>مرتضی کریمی</a>
+                                </div>
+                                <p class="excerpt">
+                                    کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان
+                                    جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه
+                                    ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد... <a>بیشتر&nbsp;بخوانید</a>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <hr />
+                <div class="block_content">
+                    <label for="message">پیام (20 کاراکتر حداقل، 100 حداکثر):</label>
+                    <textarea id="message" required="required" class="form-control" name="message"
+                              data-parsley-trigger="keyup" data-parsley-minlength="20"
+                              data-parsley-maxlength="100"
+                              data-parsley-minlength-message="بیا دیگه! شما نیاز به وارد کردن حداقل 20 کاراکتر از نظر طول دارید..."
+                              data-parsley-validation-threshold="10"></textarea>
+                    <a style="width:30%;margin-top:10px;margin-left:10px" class="btn  btn-success">
+
+                        ارسال
+                        <i class="fa fa-send"></i>
+                    </a>
+                </div>
+
+                  
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">بستن</button>
+                    <button type="button" class="btn btn-primary">ذخیره تغییرات</button>
+                </div>
+
+            </div>
+    </div>
+</div>
