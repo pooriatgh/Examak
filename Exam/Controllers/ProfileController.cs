@@ -18,6 +18,12 @@ namespace Exam.Controllers
         {
             return View();
         }
+        public ActionResult GetWritingTasks() {
+            var db = new ENDEntities();
+            var user = (Tbl_User)Session["UserSession"];
+            var result = db.Tbl_Question.Where(p=>p.QuestionIsActive==true).ToList();
+            return Json(result,JsonRequestBehavior.AllowGet);
+        }
         public JsonResult GetTransactionList()
         {
             var db = new ENDEntities();

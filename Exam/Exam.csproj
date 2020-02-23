@@ -130,6 +130,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AdminQuestionController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -2676,6 +2677,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Questions\Q1-Graph.png" />
     <Content Include="Content\SinglePage\contactform\contactform.js" />
     <Content Include="Content\SinglePage\contactform\Readme.txt" />
     <Content Include="Content\SinglePage\css\scss-files.txt" />
@@ -3691,6 +3693,12 @@
     <Content Include="Views\Shared\_Layout_Panel.cshtml" />
     <Content Include="Views\Speaking\SpeakingPanel.cshtml" />
     <Content Include="Views\Ticket\Ticket.cshtml" />
+    <Content Include="Views\Shared\_Layout_Admin.cshtml" />
+    <Content Include="Views\AdminQuestion\Create.cshtml" />
+    <Content Include="Views\AdminQuestion\Delete.cshtml" />
+    <Content Include="Views\AdminQuestion\Details.cshtml" />
+    <Content Include="Views\AdminQuestion\Edit.cshtml" />
+    <Content Include="Views\AdminQuestion\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\SpeakingFiles\" />

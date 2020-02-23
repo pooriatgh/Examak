@@ -39,8 +39,14 @@ namespace Exam.Controllers
                 var random = new Random();
                 var writingList = db.Tbl_Question.Where(p => p.QuestionIsActive == true && p.QuestionType == "writing").ToList();
                 int index = random.Next(writingList.Count);
-                return Json(writingList[index]);
+                return Json(writingList[index],JsonRequestBehavior.AllowGet);
             }
+        }
+        public JsonResult GetWritingList()
+        {
+            var db = new ENDEntities();
+            var writingList = db.Tbl_Question.Where(p => p.QuestionIsActive == true && p.QuestionType == "writing").ToList();
+            return Json(writingList, JsonRequestBehavior.AllowGet);
         }
         public JsonResult SubmitAnswer(Guid writingId, string answer)
         {
@@ -81,7 +87,6 @@ namespace Exam.Controllers
             }
             return Json("nok");
         }
-
         public JsonResult GetCorrection(Guid answerId)
         {
             var db = new ENDEntities();
@@ -93,8 +98,6 @@ namespace Exam.Controllers
             }
             return Json("nok");
         }
-
-
         public JsonResult GetAvailable()
         {
             var db = new ENDEntities();
@@ -120,6 +123,18 @@ namespace Exam.Controllers
             return Json("nok");
         }
         public JsonResult GetDone()
+        {
+            var db = new ENDEntities();
+            var user = (Tbl_User)Session["UserSession"];
+            var answerList = db.Tbl_Answer.Where(p => p.FK_UserId == user.PK_UserId && p.Tbl_Question.QuestionType == "writing" &&
+            (p.TeacherAnswerText != String.Empty || p.TeacherAnswerFile != String.Empty)).ToList();
+            if (answerList != null)
+            {
+                return Json(answerList.Count);
+            }
+            return Json("nok");
+        }
+        public JsonResult GetAll()
         {
             var db = new ENDEntities();
             var user = (Tbl_User)Session["UserSession"];

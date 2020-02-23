@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Exam.Data.Tbl_Question>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.QuestionType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuestionCategory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuestionLevel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuestionTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuestionText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuestionIsActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateDatetime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuestionImageUrl1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuestionImageUrl2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuestionFileUrl)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuestionType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuestionCategory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuestionLevel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuestionTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuestionText)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuestionIsActive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateDatetime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuestionImageUrl1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuestionImageUrl2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuestionFileUrl)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PK_QuestionId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PK_QuestionId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PK_QuestionId })
+        </td>
+    </tr>
+}
+
+</table>

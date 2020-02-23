@@ -30,7 +30,7 @@
                     </h3>
                 </div>
                 <div class="panel-body">
-                    <textarea style="width:100%;height:100%;min-height:400px;text-align:left;direction:ltr" ></textarea>
+                    <textarea id="answer" style="width:100%;height:100%;min-height:400px;text-align:left;direction:ltr" ></textarea>
                 </div>
                 <div class="panel-footer">
                     <div class="row">
@@ -55,3 +55,41 @@
         </div>
     </div>
 </div>
+
+@section scripts{
+    <script>
+         function SendPatchForm(url) {
+            //var fileUpload = $("#UpdateFile").get(0);
+            //var files = fileUpload.files;
+            // Create FormData object
+            var fileData = new FormData();
+            // Looping over all files and add it to FormData object
+            //for (var i = 0; i < files.length; i++) {
+            //    fileData.append('UpdateFile', files[i]);
+            //    break;
+            //}
+            // Adding one more key to FormData object
+            answer = $("#answer").val()
+            fileData.append('answer', answer);
+            $.ajax({
+                url: url,
+                type: "POST",
+                contentType: false, // Not to set any content header
+                processData: false, // Not to process data
+                data: fileData,
+                success: function (result) {
+                     new PNotify({
+                                title: 'عملیات موفقیت آمیز',
+                                text: 'آپدیت جدید ایجاد شد',
+                                type: 'success',
+                                styling: 'bootstrap3'
+                            });
+                    LoadPatchTable()
+                },
+                error: function (err) {
+                    alert(err.statusText);
+                }
+            });
+        }
+    </script>
+    }
